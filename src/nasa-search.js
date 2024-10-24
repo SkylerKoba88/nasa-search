@@ -128,6 +128,7 @@ export class nasaSearch extends DDDSuper(I18NMixin(LitElement)) {
     if (changedProperties.has('items') && this.items.length > 0) {
       console.log(this.items);
     }
+    console.log("message goes here");
   }
   openInNewTab(url) {
     window.open(url, '_blank');
