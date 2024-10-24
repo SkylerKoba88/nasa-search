@@ -3,6 +3,7 @@ import babel from '@rollup/plugin-babel';
 import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
 import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
 import esbuild from 'rollup-plugin-esbuild';
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: 'index.html',
@@ -19,6 +20,11 @@ export default {
     /** Enable using HTML as rollup entrypoint */
     html({
       minify: true,
+    }),
+    copy({
+      targets: [
+        {src: 'lib/', dest:'public'}
+      ]
     }),
     /** Resolve bare module imports */
     nodeResolve(),
